@@ -8,9 +8,9 @@ import data.ThemaObject;
  *
  * Eine Klasse, die dieses Interface implementiert, kann als "Delegat"
  * fungieren, das den ausgewählten Listeneintrag für weitere Verarbeitung 
- * erhält.
- * 
- */
+ * erhält*/
+
+
 public interface ListSelectionDelegate {
 
 	/**
@@ -18,6 +18,4 @@ public interface ListSelectionDelegate {
 	 * @param selection Das selektierte Objekt
 	 */
 	public void recieveSelectedObject(ThemaObject selection);
-//	public void recieveSelectedObject(String selection);
-
 }
