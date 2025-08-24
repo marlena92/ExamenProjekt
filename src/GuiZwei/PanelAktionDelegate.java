@@ -6,14 +6,15 @@ import javax.swing.event.ListSelectionEvent;
  * "ThemaSpeichern" das Thema zu speichern,nach dem Klick auf Button "ThemaLöschen" das Thema zu löschen, und nach dem Klick auf Button "NeuesThema"
  *  um die Anzeige des Themeneditors.*/ 
 
+
 public interface PanelAktionDelegate {
 	
 	
-	public void saveTheme();
+	   public void saveTheme();
 	
-	public void deleteTheme();
+	   public void deleteTheme();
 	
-	public void newTheme();
+	   public void newTheme();
 
-	void valueChanged(ListSelectionEvent e);
+	   void valueChanged(ListSelectionEvent e);
 }
