@@ -2,15 +2,27 @@ package data;
 
 public class ThemaObject {
 	
+	public static final String DB_COLUMN_ID = "id";
+	public static final String DB_COLUMN_TITLE = "title";
+	public static final String DB_COLUMN_INFO = "informationen";
 	/** Anhand der ID kann man ein Thema eindeutig indentifizieren*/
 	
-	private int id;   
+	
+	private int id;  
+	public int getId() {
+		return id;
+	}
+	
+	
     /**
      * Gibt eine String-Repräsentation des ThemaObject zurück.
      * Diese wird in der JList angezeigt.
      */
 	
+	
 	private String titel;
+	
+	
 	
     @Override
     public String toString() {
@@ -20,12 +32,6 @@ public class ThemaObject {
 	
 	private String info;
 	
-	
-	
-	public int getId() {
-		return id;
-	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
