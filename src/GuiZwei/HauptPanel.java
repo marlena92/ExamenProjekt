@@ -100,13 +100,13 @@ public class HauptPanel extends JPanel implements ListSelectionDelegate, PanelAk
 		private void initButtonActions() {
 
 		// Speichern-Button
-		panelAktionen.btnSpeichern.addActionListener(e -> saveTheme());
+		panelAktionen.btnSpeichern.addActionListener(_ -> saveTheme());
 
 		// Löschen-Button
-		panelAktionen.btnLoeschen.addActionListener(e -> deleteTheme());
+		panelAktionen.btnLoeschen.addActionListener(_ -> deleteTheme());
 
 		// Neues Thema-Button
-		panelAktionen.btnNeuesThema.addActionListener(e -> newTheme());
+		panelAktionen.btnNeuesThema.addActionListener(_ -> newTheme());
 		}
 
 
@@ -151,7 +151,7 @@ public class HauptPanel extends JPanel implements ListSelectionDelegate, PanelAk
 	
 	
 	/** Eine Methode deleteTheme()*/
-		@Override
+		
 		
 		public void deleteTheme() {
 	    System.out.println("Thema wurde gelöscht");
