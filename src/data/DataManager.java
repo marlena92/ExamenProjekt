@@ -102,7 +102,32 @@ public ArrayList<ThemaObject> ladeAlleThemen() {
 	}
 
 public String deleteThema(ThemaObject selected) {
-		// TODO Auto-generated method stub
-		return null;
+	 if (selected == null || selected.getId() <= 0) {
+	        return "Ungültiges Thema zum Löschen.";
+	    }
+	    Connection connection = null;
+	    PreparedStatement stmt = null;
+	    try {
+	        connection = DriverManager.getConnection(URL, USER, PASSWORD);
+	        String command = "DELETE FROM marlenaexamen.thema WHERE ID = ?";
+	        stmt = connection.prepareStatement(command);
+	        stmt.setInt(1, selected.getId());
+	        int affectedRows = stmt.executeUpdate();
+
+	        if (affectedRows == 0) {
+	            return "Löschen des Themas fehlgeschlagen, kein Thema mit dieser ID gefunden.";
+	        }
+	        return "Thema mit id " + selected.getId() + " wurde gelöscht.";
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	        return "Fehler beim Löschen des Themas: " + e.getMessage();
+	    } finally {
+	        try {
+	            if (stmt != null) stmt.close();
+	            if (connection != null) connection.close();
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	    }
 	}
 }
